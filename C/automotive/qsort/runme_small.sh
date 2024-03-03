@@ -1,2 +1,4 @@
 #!/bin/sh
-qsort_small input_small.dat > output_small.txt
+make clean
+make
+./qsort_small.o input_small.dat > output_small.txt

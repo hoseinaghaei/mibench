@@ -9,4 +9,4 @@ qsort_large: qsort_large.c Makefile
 	gcc -static qsort_large.c -O3 -o qsort_large.o -lm
 
 clean:
-	rm -rf qsort_small qsort_large output*
+	rm -rf qsort_small.o qsort_large.o output*
