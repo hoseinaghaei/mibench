@@ -61,7 +61,8 @@ void usqrt(unsigned long x, struct int_sqrt *q)
                   a++;
             }
       }
-      memcpy(q, &a, sizeof(long));
+    q->sqrt = a;
+    q->frac = r;
 }
 
 #ifdef TEST
