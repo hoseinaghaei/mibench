@@ -1,2 +1,4 @@
 #!/bin/sh
-bitcnts 75000 > output_small.txt
+make clean
+make
+./bitcnts 75000 > output_small.txt
