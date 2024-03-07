@@ -1,2 +1,4 @@
 #!/bin/sh
-basicmath_large > output_large.txt
+make clean
+make
+./basicmath_large > output_large.txt
