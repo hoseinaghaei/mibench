@@ -3,37 +3,37 @@ from cubic import solve_cubic
 from isqrt import usqrt
 from rad2deg import rad2deg, deg2rad
 
-if __name__ == "__main__":
-    a1, b1, c1, d1 = 1.0, -10.5, 32.0, -30.0
-    a2, b2, c2, d2 = 1.0, -4.5, 17.0, -30.0
-    a3, b3, c3, d3 = 1.0, -3.5, 22.0, -31.0
-    a4, b4, c4, d4 = 1.0, -13.7, 1.0, -35.0
 
+def main():
     print("********* CUBIC FUNCTIONS ***********")
+    a, b, c, d = 1.0, -10.5, 32.0, -30.0
     # should get 3 solutions: 2, 6 & 2.5
-    count, solution = solve_cubic(a1, b1, c1, d1)
+    count, solution = solve_cubic(a, b, c, d)
     print("Solutions:", end='')
     for i in range(count):
-        print(f' {solution[i]}', end='')
+        print(" {:.6f}".format(solution[i]), end='')
     print()
 
     # should get 1 solution: 2.5
-    count, solution = solve_cubic(a2, b2, c2, d2)
+    a, b, c, d = 1.0, -4.5, 17.0, -30.0
+    count, solution = solve_cubic(a, b, c, d)
     print("Solutions:", end='')
     for i in range(count):
-        print(f' {solution[i]}', end='')
+        print(" {:.6f}".format(solution[i]), end='')
     print()
 
-    count, solution = solve_cubic(a3, b3, c3, d3)
+    a, b, c, d = 1.0, -3.5, 22.0, -31.0
+    count, solution = solve_cubic(a, b, c, d)
     print("Solutions:", end='')
     for i in range(count):
-        print(f' {solution[i]}', end='')
+        print(" {:.6f}".format(solution[i]), end='')
     print()
 
-    count, solution = solve_cubic(a4, b4, c4, d4)
+    a, b, c, d = 1.0, -13.7, 1.0, -35.0
+    count, solution = solve_cubic(a, b, c, d)
     print("Solutions:", end='')
     for i in range(count):
-        print(f' {solution[i]}', end='')
+        print(" {:.6f}".format(solution[i]), end='')
     print()
 
     # Now solve some random equations
@@ -44,7 +44,7 @@ if __name__ == "__main__":
                     count, solution = solve_cubic(a, b, c, d)
                     print("Solutions:", end='')
                     for i in range(count):
-                        print(f' {solution[i]}', end='')
+                        print(" {:.6f}".format(solution[i]), end='')
                     print()
 
     print("********* INTEGER SQR ROOTS ***********")
@@ -64,3 +64,7 @@ if __name__ == "__main__":
     while x < 2 * math.pi + 1e-6:
         print("{:.12f} radians = {:3.0f} degrees".format(x, rad2deg(x)))
         x += math.pi / 100
+
+
+if __name__ == "__main__":
+    main()
