@@ -1,5 +1,5 @@
 from ctypes import c_uint32
-
+ 
 BITSPERLONG = 32
 
 def uint32(val):
