@@ -15,6 +15,8 @@ Additionally, this project features scripts for obtaining performance outputs fr
   - `templates/`: Contains template files for x86 and ARM architectures.
   - `mcpat.py`: Script for converting gem5 outputs to McPAT inputs.
   - `mcpat.sh`: Example script for running the converter.
+- `gem5_script.py`: A sample script to run python codes in x86 gem5.
+  - `build/X86/gem5.opt -d output_dir_name gem5_script.py` 
 
 ## Getting Started
 
