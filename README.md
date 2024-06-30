@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is an extension of the MiBench Version 1.0 benchmark suite, which provides a set of benchmark programs intended for evaluating the performance of microcontrollers and embedded systems. This repository includes the original C implementations of MiBench benchmarks, as well as their corresponding implementations in Python and Java.
+This project is an extension of the [MiBench Version 1.0 benchmark suite](https://vhosts.eecs.umich.edu/mibench/), which provides a set of benchmark programs intended for evaluating the performance of microcontrollers and embedded systems. This repository includes the original C implementations of MiBench benchmarks, as well as their corresponding implementations in Python and Java.
 
 Additionally, this project features scripts for obtaining performance outputs from the gem5 simulator and converting those outputs into inputs for the McPAT power, area, and timing modeling tool.
 
