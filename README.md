@@ -22,10 +22,10 @@ Additionally, this project features scripts for obtaining performance outputs fr
 
 ### Prerequisites
 
-- gem5 simulator (Version: 23.1.0.0)
+- [gem5](https://github.com/gem5/gem5/releases/tag/v23.1.0.0) simulator (Version: 23.1.0.0)
 - Python 3.x
 - Java Development Kit (JDK)
-- McPAT tool (Version: 1.3)
+- [McPAT](https://github.com/HewlettPackard/mcpat/releases/tag/v1.3.0) tool (Version: 1.3)
 
 ### Running Benchmarks
 
