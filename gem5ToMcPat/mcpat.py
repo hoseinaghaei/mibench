@@ -120,7 +120,7 @@ def readMcpatFile(templateFile):
 def prepareTemplate(outputFile):
     numCores = 1
     privateL2 = 'l2cache' in config["system"]["cpu"][0].keys()
-    sharedL2 = 'l2' in config["system"].keys()
+    sharedL2 = 'l2cache' in config["system"].keys()
 
     if privateL2:
         numL2 = numCores
@@ -244,7 +244,6 @@ def prepareTemplate(outputFile):
 def getConfValue(confStr):
     spltConf = re.split('\.', confStr)
     currConf = config
-    print(spltConf)
     currHierarchy = ""
     for x in spltConf:
         currHierarchy += x
@@ -263,8 +262,6 @@ def getConfValue(confStr):
             #         print "\t Please use the right config param in your McPAT template file"
             # else:
             currConf = currConf[x]
-        else:
-            return None
         currHierarchy += "."
 
     logging.info(confStr, currConf)
@@ -284,7 +281,6 @@ def dumpMcpatOut(outFile):
     for param in rootElem.iter('param'):
         name = param.attrib['name']
         value = param.attrib['value']
-        skipParam = False
 
         # if there is a config in this attrib
         if 'config' in value:
@@ -293,12 +289,9 @@ def dumpMcpatOut(outFile):
             for conf in allConfs:
 
                 confValue = getConfValue(conf)
-                if confValue is None:
-                    skipParam = True
-                    break
                 value = re.sub("config." + conf, str(confValue), value)
 
-            if "," in value and not skipParam:
+            if "," in value:
                 exprs = re.split(',', value)
                 for i in range(len(exprs)):
                     try:
@@ -309,7 +302,7 @@ def dumpMcpatOut(outFile):
                         raise
 
                 param.attrib['value'] = ','.join(exprs)
-            elif not skipParam:
+            else:
                 param.attrib['value'] = str(eval(str(value)))
 
     # replace stats with values from the GEM5 stats file

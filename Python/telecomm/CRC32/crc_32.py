@@ -53,24 +53,18 @@ def updc32(octet, crc):
 
 
 def crc32file(name):
-    try:
-        with open(name, 'rb') as fin:
-            oldcrc32 = 0xFFFFFFFF
-            charcnt = 0
+    with open(name, 'rb') as fin:
+        oldcrc32 = 0xFFFFFFFF
+        charcnt = 0
 
-            while byte := fin.read(1):
-                charcnt += 1
-                oldcrc32 = updc32(byte[0], oldcrc32)
+        while byte := fin.read(1):
+            charcnt += 1
+            oldcrc32 = updc32(byte[0], oldcrc32)
 
-            print(oldcrc32)
-            oldcrc32 = ~oldcrc32 & 0xFFFFFFFFFFFFFFFF
-            return oldcrc32, charcnt, True
-    except Exception as e:
-        print(e)
-        return None, None, False
+        oldcrc32 = ~oldcrc32 & 0xFFFFFFFFFFFFFFFF
+        return oldcrc32, charcnt
 
 
 for filename in sys.argv[1:]:
-    crc, charcnt, success = crc32file(filename)
-    if success:
-        print(f"{crc:016X} {charcnt:7d} {filename}")
+    crc, charcnt = crc32file(filename)
+    print(f"{crc:016X} {charcnt:7d} {filename}")
