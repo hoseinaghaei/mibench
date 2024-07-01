@@ -32,3 +32,7 @@ Additionally, this project features scripts for obtaining performance outputs fr
 1. Navigate to the specific language directory.
 2. find your application
 3. Run the runme_small.sh or runme_large.sh file
+
+### Result
+  We ran each Python code in gem5 with five linear voltage and clock frequencies. ranging from 0.9V to 1.1V and 1GH to 2GH. 
+  You can find a sample for gem5 output and McPAT input in [qsort directory](https://github.com/hoseinaghaei/mibench/tree/master/Python/automotive/qsort/m5out-small/m5out-qsort-2GH) 
