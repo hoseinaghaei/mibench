@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is an extension of the MiBench Version 1.0 benchmark suite, which provides a set of benchmark programs intended for evaluating the performance of microcontrollers and embedded systems. This repository includes the original C implementations of MiBench benchmarks, as well as their corresponding implementations in Python and Java.
+This project is an extension of the [MiBench Version 1.0 benchmark suite](https://vhosts.eecs.umich.edu/mibench/), which provides a set of benchmark programs intended for evaluating the performance of microcontrollers and embedded systems. This repository includes the original C implementations of MiBench benchmarks, as well as their corresponding implementations in Python and Java.
 
 Additionally, this project features scripts for obtaining performance outputs from the gem5 simulator and converting those outputs into inputs for the McPAT power, area, and timing modeling tool.
 
@@ -22,13 +22,17 @@ Additionally, this project features scripts for obtaining performance outputs fr
 
 ### Prerequisites
 
-- gem5 simulator (Version: 23.1.0.0)
+- [gem5](https://github.com/gem5/gem5/releases/tag/v23.1.0.0) simulator (Version: 23.1.0.0)
 - Python 3.x
 - Java Development Kit (JDK)
-- McPAT tool (Version: 1.3)
+- [McPAT](https://github.com/HewlettPackard/mcpat/releases/tag/v1.3.0) tool (Version: 1.3)
 
 ### Running Benchmarks
 
 1. Navigate to the specific language directory.
 2. find your application
 3. Run the runme_small.sh or runme_large.sh file
+
+### Result
+  We ran each Python code in gem5 with five linear voltage and clock frequencies. ranging from 0.9V to 1.1V and 1GH to 2GH. 
+  You can find a sample for gem5 output and McPAT input in [qsort directory](https://github.com/hoseinaghaei/mibench/tree/master/Python/automotive/qsort/m5out-small/m5out-qsort-2GH) 
