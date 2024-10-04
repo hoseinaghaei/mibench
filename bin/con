@@ -1,0 +1,1 @@
+python3 /home/user01/workspace/Gem5McPatParser/Gem5McPATParser.py -c /home/user01/workspace/gem5/m5out-cortex-a15/config.json  -s /home/user01/workspace/gem5/m5out-cortex-a15/stats.txt -t /home/user01/workspace/Gem5McPatParser/templates/template_arm.xml
