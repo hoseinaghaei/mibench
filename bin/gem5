@@ -1,3 +1,4 @@
-/home/user01/workspace/gem5/build/ARM/gem5.opt -d /home/user01/workspace/gem5/m5out-cortex-a15 /home/user01/workspace/gem5/configs/common/cores/arm/cortex-a15.py
-
+nohup /home/user01/workspace/gem5/build/ARM/gem5.opt \
+-d /home/user01/workspace/gem5/m5out-cortex-a15-$(basename "$PWD") \
+/home/user01/workspace/gem5/configs/common/cores/arm/cortex-a15.py &
 
